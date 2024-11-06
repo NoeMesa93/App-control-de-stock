@@ -2,15 +2,30 @@
     <div class="my-3 mx-3">
         <label class="form-label" for="title">Título</label>
         <input class="form-control" type="text" id="title" formControlName="title" placeholder="Introduce el nombre del producto">
+        @if(checkControl('title', 'required')){
+        <p class="error text-dark mt-2">El campo es obligatorio</p>
+        }
     </div>
     <div class="my-3 mx-3">
         <label class="form-label" for="price">Precio</label>
         <input class="form-control" type="number" id="price" formControlName="price" placeholder="Introduce el precio del producto">
+        @if(checkControl('price', 'required')){
+        <p class="error text-dark mt-2">El campo es obligatorio</p>
+        }
+        @if(checkControl('price', 'min')){
+        <p class="error text-dark mt-2">El precio debe ser mayor a 0</p>
+        }
     </div>
     <div class="my-3 mx-3">
         <label class="form-label" for="quantity">Cantidad</label>
         <input class="form-control" type="number" id="quantity" formControlName="quantity" placeholder="Introduce la cantidad de producto">
+        @if(checkControl('price', 'required')){
+        <p class="error text-dark mt-2">El campo es obligatorio</p>
+        }
+        @if(checkControl('price', 'min')){
+        <p class="error text-dark mt-2">La cantidad debe ser mayor a 0</p>
+        }
     </div>
 
-    <input type="submit" value="Enviar" class="btn btn-dark my-2 mx-3">
+    <input type="submit" value="Enviar" class="btn btn-dark my-2 mx-3" [disabled]="!productForm.valid">
 </form>

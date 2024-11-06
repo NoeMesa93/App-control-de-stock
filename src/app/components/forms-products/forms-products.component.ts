@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IProduct } from '../../interfaces/iproduct';
 
 @Component({
@@ -17,9 +17,18 @@ export class FormsProductsComponent {
 
   constructor() {
     this.productForm = new FormGroup({
-      title: new FormControl(null, []),
-      price: new FormControl(null, []),
-      quantity: new FormControl(null, []),
+      title: new FormControl(null, [
+        Validators.required,
+      ]),
+      price: new FormControl(null, [
+        Validators.required,
+        Validators.min(0),
+
+      ]),
+      quantity: new FormControl(null, [
+        Validators.required,
+        Validators.min(1),
+      ]),
    }, [])
   }
   
@@ -27,5 +36,9 @@ export class FormsProductsComponent {
     // Cuando tengo el producto se lo paso al padre (app-component)
     this.productEmit.emit(this.productForm.value);
     this.productForm.reset();
+  }
+
+  checkControl(formControlName: string, validator: string) {
+    return this.productForm.get(formControlName)?.hasError(validator) && this.productForm.get(formControlName)?.touched;
   }
 }
