@@ -1,27 +1,44 @@
-# AppControlStock
+Control de Stock de Productos de Ordenador - Angular App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Este proyecto es una aplicación Angular sencilla para gestionar el stock de productos de ordenador. La aplicación permite visualizar, agregar y controlar la cantidad de productos en stock mediante una interfaz amigable, diseñada con Bootstrap.
+Estructura del Proyecto
 
-## Development server
+La aplicación sigue una estructura modular para facilitar la organización del código. A continuación se describe la estructura principal de los archivos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    src/: Contiene los archivos principales de la aplicación, incluyendo el archivo index.html, main.ts y styles.scss.
+    app/: Carpeta principal de la aplicación Angular.
+        app.component.html, app.component.ts, app.component.css: Componentes principales de la aplicación.
+        interfaces/: Carpeta que contiene la interfaz Product, que define la estructura de los productos gestionados.
+        components/: Carpeta que agrupa los componentes de la aplicación, dividida en:
+            card-product/: Componente para visualizar la información de cada producto individual en una tarjeta.
+            db/: Carpeta destinada a simular o cargar una base de datos estática (puede contener un archivo JSON o servicio).
+            forms-products/: Componente para formularios, permitiendo añadir o actualizar productos.
+            list-products/: Componente que muestra una lista de productos disponibles en el inventario.
+            total-products/: Componente para visualizar el total de productos en stock y su cantidad.
 
-## Code scaffolding
+Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Visualización de Productos: Muestra una lista de productos en tarjetas individuales, usando el componente card-product.
+    Formulario de Productos: Permite añadir nuevos productos o editar los existentes, facilitando la gestión de stock.
+    Resumen del Stock: El componente total-products muestra el total de productos y la cantidad total disponible en el inventario.
+    Interfaz Responsive: Los estilos están diseñados con Bootstrap para una experiencia de usuario óptima en diferentes dispositivos.
 
-## Build
+Tecnologías Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    Angular: Framework principal para la creación de la aplicación.
+    Bootstrap: Framework CSS para estilos rápidos y responsivos.
+    TypeScript: Lenguaje de programación para desarrollo en Angular.
+    HTML/CSS: Para la estructura y estilo de la aplicación.
 
-## Running unit tests
+Notas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    La aplicación usa Bootstrap para estilos, por lo que puedes añadir tus propios estilos en styles.scss o modificar los estilos de cada componente para personalizar aún más la interfaz.
+    Actualmente, la aplicación está diseñada para un flujo de trabajo básico de gestión de stock. Si deseas agregar una conexión a una API real para gestionar los productos, podrías crear un servicio en Angular para manejar peticiones HTTP.
 
-## Running end-to-end tests
+Futuras Mejoras:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Algunas posibles mejoras a considerar:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    Autenticación: Añadir autenticación para proteger la gestión del inventario.
+    Persistencia de Datos: Implementar una base de datos o conexión a API para almacenamiento de datos.
+    Paginación y Filtros: Incluir paginación y filtros en la lista de productos para mejorar la usabilidad.
