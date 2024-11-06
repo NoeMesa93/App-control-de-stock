@@ -1,0 +1,16 @@
+<form [formGroup]="productForm" (ngSubmit)="getDataProduct()">
+    <div class="my-3 mx-3">
+        <label class="form-label" for="title">Título</label>
+        <input class="form-control" type="text" id="title" formControlName="title" placeholder="Introduce el nombre del producto">
+    </div>
+    <div class="my-3 mx-3">
+        <label class="form-label" for="price">Precio</label>
+        <input class="form-control" type="number" id="price" formControlName="price" placeholder="Introduce el precio del producto">
+    </div>
+    <div class="my-3 mx-3">
+        <label class="form-label" for="quantity">Cantidad</label>
+        <input class="form-control" type="number" id="quantity" formControlName="quantity" placeholder="Introduce la cantidad de producto">
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-dark my-2 mx-3">
+</form>

@@ -1,0 +1,6 @@
+<ul>
+    @for(product of ourProducts; track product.id; let par=$even; let impar=$odd){
+    <app-card-product [myProduct]="product" [par]="par" [impar]="impar"></app-card-product>
+    }
+
+</ul>
