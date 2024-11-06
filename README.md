@@ -1,7 +1,8 @@
 Control de Stock de Productos de Ordenador - Angular App
 
 Este proyecto es una aplicación Angular sencilla para gestionar el stock de productos de ordenador. La aplicación permite visualizar, agregar y controlar la cantidad de productos en stock mediante una interfaz amigable, diseñada con Bootstrap.
-Estructura del Proyecto
+
+Estructura del Proyecto:
 
 La aplicación sigue una estructura modular para facilitar la organización del código. A continuación se describe la estructura principal de los archivos:
 
